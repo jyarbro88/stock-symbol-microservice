@@ -19,11 +19,11 @@ public class StocksApplication {
     CommandLineRunner runner(StockRepository stockRepository) throws Exception {
 
         return args -> {
-            stockRepository.save(new StockModel((long) 1, "AAPL", "Apple"));
-            stockRepository.save(new StockModel((long)2, "GOOG", "Google"));
-            stockRepository.save(new StockModel((long)3, "MSFT", "Microsoft"));
-            stockRepository.save(new StockModel((long)4, "PVTL", "Pivotal"));
-            stockRepository.save(new StockModel((long)5, "AMZN", "Amazon"));
+            stockRepository.save(new StockModel("1", "AAPL", "Apple"));
+            stockRepository.save(new StockModel("2", "GOOG", "Google"));
+            stockRepository.save(new StockModel("3", "MSFT", "Microsoft"));
+            stockRepository.save(new StockModel("4", "PVTL", "Pivotal"));
+            stockRepository.save(new StockModel("5", "AMZN", "Amazon"));
         };
     }
 }

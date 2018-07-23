@@ -25,12 +25,13 @@ public class StockController {
     }
 
     @GetMapping(
-            value = {"/{stockId}"},
+            value = {"/{stockSymbolToSearch}"},
             produces = {"application/json"})
     @ResponseBody
     public Optional<StockModel> findSymbolById(
-            @PathVariable(name = "stockId") Long stockId
+            @PathVariable(name = "stockSymbolToSearch") String stockSymbolToSearch
     ) {
-        return stockRepository.findById(stockId);
+
+        return stockRepository.findStockModelBySymbol(stockSymbolToSearch.toUpperCase());
     }
 }
